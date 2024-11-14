@@ -4,4 +4,4 @@ it is a simulation of ielts but this test is not held so, this project was just 
 
 the second one -> main project:
 these are some of the projects i've worked on before, but these are just my knowledge about python, I also worked with some important AI libraries and modules like: Matplotlib, Numpy, Pandas,
-scikit-learn and so on.
+scikit-learn and so on, these are saved in : "library" repository
