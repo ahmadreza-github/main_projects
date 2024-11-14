@@ -9,5 +9,3 @@ result : to get the result but the program continues to run
 00 : have an unlimited ending number.
 
 if single small letter is entered, capital letter will be shown
-
-you can't prank my program

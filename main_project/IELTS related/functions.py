@@ -1,6 +1,9 @@
+import matplotlib.pyplot as plt
 import sys
 from pathlib import Path
 path = Path(r"C:\Users\AHMAD\OneDrive\Desktop\IELTS document\IELTS practice.txt")
+
+
 def start_function():
     run = True
     while run:
@@ -24,9 +27,6 @@ def start_function():
             run = False
         run = False
     return start
- 
-
-
 
 
 def end_function():
@@ -38,7 +38,7 @@ def end_function():
             continue
 
         elif end == "00":
-            return float('inf') 
+            return float('inf')
         try:
             end = int(end)
             if end == 0:
@@ -58,31 +58,30 @@ def end_function():
     return end
 
 
-def provider(parameter , start_number):
+def provider(parameter, start_number):
     print("________________________________________")
     print("Provided answers:\n")
-    for index , answers in enumerate(parameter, start = start_number - 1):
+    for index, answers in enumerate(parameter, start=start_number - 1):
         global content
-        content = f"({index + 1}) >>> ({answers})" 
+        content = f"({index + 1}) >>> ({answers})"
         print(content)
-    print("________________________________________") 
+    print("________________________________________")
 
 
-def save_file(parameter ,start_number , path): 
-    with open(path , "a" ) as f:
-        for index , answers in enumerate(parameter , start= start_number -1 ):
+def save_file(parameter, start_number, path):
+    with open(path, "a") as f:
+        for index, answers in enumerate(parameter, start=start_number - 1):
             content = f"({index + 1}) >>> ({answers})"
-            f.write(content + "\n") 
-        print(">> File created successfully <<") 
-    print("  ^^^^^^^^^^^^^^^^^^^^^^^^^^") 
-       
+            f.write(content + "\n")
+        print(">> File created successfully <<")
+    print("  ^^^^^^^^^^^^^^^^^^^^^^^^^^")
 
 
-import matplotlib.pyplot as plt
-def plot(input1, input2 , third_parameter): 
-    labels = ["wrong answers", "right answers" , "unanswered"]
-    colors = ["red" , "blue" , 'yellow']
-    ex = .1 , .1 , .1
-    plt.pie([input1, input2 , third_parameter], labels=labels, autopct='%.2f %%' , colors = colors, explode= ex) 
-    plt.title("Your approximate performance on this test") 
-    plt.show() 
+def plot(input1, input2, third_parameter):
+    labels = ["wrong answers", "right answers", "unanswered"]
+    colors = ["red", "blue", 'yellow']
+    ex = .1, .1, .1
+    plt.pie([input1, input2, third_parameter], labels=labels,
+            autopct='%.2f %%', colors=colors, explode=ex)
+    plt.title("Your approximate performance on this test")
+    plt.show()
