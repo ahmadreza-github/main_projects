@@ -1,10 +1,8 @@
+# You pass a folder's path to "base_path" and run the script, different types(based on extension) of file will be put into folders with proper names.
 import os
 import shutil
 from pathlib import Path
-
-# Define paths
-# base_path = Path(r'C:\Users\AHMAD\target folder')
-base_path = Path(r"C:\Users\AHMAD\OneDrive\Desktop\send to repo")
+base_path = Path(r"C:\Users\AHMAD\OneDrive\Desktop\folder")
 dotpy_path = base_path / '.PY file folder'
 dotjson_path = base_path / '.JSON files folder'
 csv_path = base_path / '.CSVs files folder'
@@ -25,22 +23,14 @@ def create_folder(end_with, path):
 
         path.mkdir(parents=True, exist_ok=True)
         print(f'Folder created: {path}')
-        # Create directory if it doesn't exist
-        # exist_ok=True:  prevents the method from raising an error if the directory already exists.
-        # parents=True:This parameter allows the creation of parent directories if they do not already exist
-
     else:
         print(f'No files ending with {end_with} found.')
-
 
 def transfer_files(file_extension, file_type, target_path):
     path = base_path
     file_type = list(path.glob(file_extension))
     for files in file_type:
         shutil.move(files, target_path)
-
-
-# Create folders based on file extensions
 create_folder('.py', dotpy_path)
 transfer_files(file_extension="*.py", file_type="python_list",
                target_path=dotpy_path)
